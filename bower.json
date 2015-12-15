@@ -8,7 +8,7 @@
     "font-awesome": "^4.0.3",
     "knockout.validation": "^1.0.2",
     "notifyjs-dist": "^0.3.2",
-    "bootstrap-sass-official": "^3.2.0"
+    "bootstrap-sass-official": "^3.2.0",
+    "aws-sdk": "aws-sdk-js#~2.2.22"
   }
 }
-

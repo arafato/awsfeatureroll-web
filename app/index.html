@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <title>awsfeatureroll web</title>
+    <meta name="author" content="Oliver Arafat (@arafato)">
+    <title>AWS FeatureRoll</title>
     <!--CSS generated from SASS 
     -->
     <link href="assets/css/main.css" rel="stylesheet">
@@ -25,8 +25,8 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li data-bind="css: { active: sammy.chosenFolderId()==='home'}"><a href="#">Home</a></li>
-            <li data-bind="css: { active: sammy.chosenFolderId()==='about'}"><a href="#about">About</a></li>
+            <li data-bind="css: { active: sammy.chosenFolderId()==='home'}"><a href="#">App</a></li>
+            <li data-bind="css: { active: sammy.chosenFolderId()==='about'}"><a href="#api">API</a></li>
             <li data-bind="css: { active: sammy.chosenFolderId()==='contact'}"><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -48,13 +48,15 @@
           <p class="col-md-6 col-md-offset-3 entry-home alert-success"><span><a href="http://fortawesome.github.io/Font-Awesome">Font Awesome icons </a>are available</span><i class="fa fa-check-square-o"></i></p>
         </div>
       </div>
-      <div id="about" style="display:none;" data-bind="visible: sammy.chosenFolderId()==='about'">
+      
+      <div id="about" style="display:none;" data-bind="visible: sammy.chosenFolderId()==='api'">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <p>Add about page here</p>
+            <p>Add api page here</p>
           </div>
         </div>
       </div>
+      
       <div id="contact" style="display:none;" data-bind="visible: sammy.chosenFolderId()==='contact'">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
