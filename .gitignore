@@ -1,6 +1,7 @@
 bower_components
 node_modules
 dist
-app/typings
+typings
 .sass-cache
 .yo-rc.json
+.tsdrc
