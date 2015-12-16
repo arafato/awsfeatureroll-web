@@ -19,6 +19,10 @@ define(['jquery',
         console.log(this.params.service);
         console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
+      
+      this.get('#home', function () {
+        self.chosenFolderId('home');
+      });
 
       this.get('#api', function () {
         self.chosenFolderId('api');
