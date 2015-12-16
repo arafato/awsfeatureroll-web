@@ -58,13 +58,13 @@
       <!-- KEYWORD SEARCH -->
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'">
         <div class="col-lg-6">
-          <div class="input-group">           
+          <div class="input-group">
             <form data-bind="submit: keyword.callService">
               <input type="text" class="form-control" placeholder="Search for..." data-bind="value: keyword.q">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="submit">Go!</button>
               </span>
-            </form>  
+            </form>
           </div>
         </div>
       </div>
@@ -76,20 +76,22 @@
               <tr>
                 <th>Published</th>
                 <th>Title</th>
-                <th>Category</th>  
+                <th>Category</th>
               </tr>
             </thead>
             <tbody data-bind="foreach: keyword.result">
               <tr>
                 <td data-bind="text: published"></td>
-                <td><a data-bind="attr: { href: url }, text: title" target="_blank"></a></td>
+                <td>
+                  <a data-bind="attr: { href: url }, text: title" target="_blank"></a>
+                </td>
                 <td data-bind="text: category"></td>
-              </tr>  
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
-      
+
       <!-- DATE SEARCH -->
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
         <div class="col-md-12">
@@ -116,6 +118,9 @@
       </div>
     </div>
   </div>
+  <script>
+    window.knockoutBootstrapDebug = true;
+  </script>
   <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
 </body>
 
