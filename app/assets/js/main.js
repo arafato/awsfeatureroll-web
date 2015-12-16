@@ -3,7 +3,7 @@
 /* global define:true*/
 define(['jquery',
     'knockout',
-    '../../assets/js/models/appViewModel.js',
+    '../../assets/js/models/app.js',
     'jquery.bootstrap'
     ], function ($, ko, AppViewModel) {
 

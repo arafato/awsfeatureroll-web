@@ -3,9 +3,9 @@
 /* global define:true*/
 define(['jquery',
     'knockout',
-    '../../../assets/js/models/sammyViewModel.js',
+    '../../../assets/js/models/routing.js',
     'knockout.validation'
-    ], function ($, ko, SammyViewModel) {
+    ], function ($, ko, Routing) {
   return function () {
     var self = this;
 
@@ -23,7 +23,6 @@ define(['jquery',
 
     // Add submodels here
     // Sammy view model for local navigation
-    self.sammy = new SammyViewModel();
-
+    self.routing = new Routing();
   };
 });
