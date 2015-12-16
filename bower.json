@@ -9,6 +9,7 @@
     "knockout.validation": "^1.0.2",
     "notifyjs-dist": "^0.3.2",
     "bootstrap-sass-official": "^3.2.0",
-    "aws-sdk": "aws-sdk-js#~2.2.22"
+    "aws-sdk": "aws-sdk-js#~2.2.22",
+    "spin.js": "~2.3.2"
   }
 }

@@ -10,13 +10,14 @@ define(['jquery',
     var self = this;
 
     self.q = ko.observable('');
+    self.result = ko.observableArray([]);
 
     self.callService = function () {
       $.ajax({
         url: Environment.KEYWORD_SERVICE + '?q=' + self.q(),
         type: 'GET',
         success: function (data) {
-          console.log(data);
+          self.result(data);
         },
         error: function (data) {
           console.log(data);
