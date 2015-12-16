@@ -5,6 +5,7 @@ require.config({
     'bower_components': '../../bower_components',
     'jquery': '../../bower_components/jquery/dist/jquery',
     'sammy': '../../bower_components/sammy/lib/sammy',
+    'spin': '../../bower_components/spin.js/spin',
     'knockout.validation': '../../bower_components/knockout.validation/Dist/knockout.validation',
     'notify': '../../bower_components/notifyjs-dist/notify',
     'notify-bootstrap': '../../bower_components/notifyjs-dist/styles/bootstrap/notify-bootstrap',

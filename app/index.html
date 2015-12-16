@@ -69,7 +69,7 @@
         </div>
       </div>
       <br>
-      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'">
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'" id="keywordSearch">
         <div class="col-md-12">
           <table class="table table-hover">
             <thead>
@@ -116,9 +116,6 @@
       </div>
     </div>
   </div>
-  <script>
-    window.knockoutBootstrapDebug = true;
-  </script>
   <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
 </body>
 
