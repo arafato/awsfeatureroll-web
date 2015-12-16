@@ -4,8 +4,9 @@
 define(['jquery',
     'knockout',
     '../../../assets/js/models/nav.js',
+    '../../../assets/js/models/keyword.js',
     'knockout.validation'
-    ], function ($, ko, Nav) {
+    ], function ($, ko, Nav, Keyword) {
   return function () {
     var self = this;
 
@@ -19,5 +20,6 @@ define(['jquery',
     });
 
     self.nav = new Nav();
+    self.keyword = new Keyword();
   };
 });

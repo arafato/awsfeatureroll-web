@@ -55,16 +55,20 @@
         </div>
       </div>
       <br>
+      <!-- KEYWORD SEARCH -->
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'">
         <div class="col-lg-6">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
+          <div class="input-group">           
+            <form data-bind="submit: keyword.callService">
+              <input type="text" class="form-control" placeholder="Search for..." data-bind="value: keyword.q">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+              </span>
+            </form>  
           </div>
         </div>
       </div>
+      <!-- DATE SEARCH -->
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
         <div class="col-md-12">
           Date Search

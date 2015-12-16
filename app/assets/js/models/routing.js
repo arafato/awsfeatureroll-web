@@ -18,21 +18,20 @@ define(['jquery',
         vm.nav.chosenMainCategory('home');
         vm.nav.chosenServiceCategory('keyword');
         
-        // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
+        if (this.params.q) {
+          vm.keyword.q(this.params.q);
+          vm.keyword.callService();
+        }
       });
       
       this.get('#home/date', function () {
         vm.nav.chosenMainCategory('home');
         vm.nav.chosenServiceCategory('date');
-        
-        // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
       
       this.get('#home/slides', function () {
         vm.chosenMainCategory('home');
         vm.chosenServiceCategory('slides');
-        
-        // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
       
       this.get('#home', function () {
