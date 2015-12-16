@@ -3,9 +3,9 @@
 /* global define:true*/
 define(['jquery',
     'knockout',
-    '../../../assets/js/models/routing.js',
+    '../../../assets/js/models/nav.js',
     'knockout.validation'
-    ], function ($, ko, Routing) {
+    ], function ($, ko, Nav) {
   return function () {
     var self = this;
 
@@ -18,11 +18,6 @@ define(['jquery',
       errorsAsTitle: false
     });
 
-    // Example observable
-    self.status = ko.observable('active');
-
-    // Add submodels here
-    // Sammy view model for local navigation
-    self.routing = new Routing();
+    self.nav = new Nav();
   };
 });

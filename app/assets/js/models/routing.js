@@ -2,50 +2,49 @@
 
 /* global define:true*/
 define(['jquery',
+  'sammy',
   'knockout',
-  'sammy'
-], function ($, ko, Sammy) {
+  '../../../assets/js/models/application.js'
+], function ($, Sammy, ko, AppViewModel) {
   return function () {
     var self = this;
 
-    self.chosenMainCategory = ko.observable();
-    self.chosenServiceCategory = ko.observable('keyword');
-
-    self.goToFolder = function (folder) { self.chosenMainCategory(folder); };
+    var vm = new AppViewModel();
+    ko.applyBindings(vm);
 
     self._sammy = new Sammy(function () {
 
       this.get('#home/keyword', function () {
-        self.chosenMainCategory('home');
-        self.chosenServiceCategory('keyword');
+        vm.nav.chosenMainCategory('home');
+        vm.nav.chosenServiceCategory('keyword');
         
         // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
       
       this.get('#home/date', function () {
-        self.chosenMainCategory('home');
-        self.chosenServiceCategory('date');
+        vm.nav.chosenMainCategory('home');
+        vm.nav.chosenServiceCategory('date');
         
         // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
       
       this.get('#home/slides', function () {
-        self.chosenMainCategory('home');
-        self.chosenServiceCategory('slides');
+        vm.chosenMainCategory('home');
+        vm.chosenServiceCategory('slides');
         
         // console.log((!this.params.startdate) ? 'no params defined' : this.params.startdate);
       });
       
       this.get('#home', function () {
-        self.chosenMainCategory('home');
+        vm.nav.chosenMainCategory('home');
       });
 
       this.get('#api', function () {
-        self.chosenMainCategory('api');
+        vm.nav.chosenMainCategory('api');
       });
       
       this.get('#contact', function () {
-        self.chosenMainCategory('contact');
+        vm.nav.chosenMainCategory('contact');
       });
 
       this.get('', function () {

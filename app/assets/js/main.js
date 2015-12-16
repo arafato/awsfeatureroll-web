@@ -3,12 +3,10 @@
 /* global define:true*/
 define(['jquery',
     'knockout',
-    '../../assets/js/models/app.js',
+    '../../assets/js/models/routing.js',
     'jquery.bootstrap'
-    ], function ($, ko, AppViewModel) {
+    ], function ($, ko, Routing) {
 
-  var UI = new AppViewModel();
-
-  ko.applyBindings(UI);
+  new Routing();
 
 });
