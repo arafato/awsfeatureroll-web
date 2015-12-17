@@ -1,3 +1,4 @@
+/* global Keyword, Nav, DateVm */
 'use strict';
 
 /* global define:true*/
@@ -5,8 +6,9 @@ define(['jquery',
     'knockout',
     '../../../assets/js/models/nav.js',
     '../../../assets/js/models/keyword.js',
+    '../../../assets/js/models/datetime.js',
     'knockout.validation'
-    ], function ($, ko, Nav, Keyword) {
+    ], function ($, ko, Nav, Keyword, DateVm) {
   return function () {
     var self = this;
 
@@ -21,5 +23,6 @@ define(['jquery',
 
     self.nav = new Nav();
     self.keyword = new Keyword();
+    self.date = new DateVm();
   };
 });

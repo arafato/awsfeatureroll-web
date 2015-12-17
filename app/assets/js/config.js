@@ -7,6 +7,7 @@ require.config({
     'sammy': '../../bower_components/sammy/lib/sammy',
     'spin': '../../bower_components/spin.js/spin',
     'knockout.validation': '../../bower_components/knockout.validation/Dist/knockout.validation',
+    'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker',
     'notify': '../../bower_components/notifyjs-dist/notify',
     'notify-bootstrap': '../../bower_components/notifyjs-dist/styles/bootstrap/notify-bootstrap',
     'jquery.bootstrap': '../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap'
@@ -23,24 +24,31 @@ require.config({
     },
     'notify-bootstrap': {
       deps: ['notify']
+    },
+    'datePicker': {
+      deps: ['moment']
     }
   },
   map: {
     '*': {
       'knockout': '../../bower_components/knockout.js/knockout',
-      'ko': '../../bower_components/knockout.js/knockout'
+      'ko': '../../bower_components/knockout.js/knockout',
+      'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker',
+      'moment': '../../bower_components/moment/moment'
     }
   }
 });
 
-// Use the debug version of knockout in development only
+// Use the debug version of knockout and datePicker in development only
 /* global window:true*/
 if (window.knockoutBootstrapDebug) {
   require.config({
     map: {
       '*': {
         'knockout': '../../bower_components/knockout.js/knockout.debug.js',
-        'ko': '../../bower_components/knockout.js/knockout.debug.js'
+        'ko': '../../bower_components/knockout.js/knockout.debug.js',
+        'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker',
+        'moment': '../../bower_components/moment/min/moment.min.js'
       }
     }
   });
