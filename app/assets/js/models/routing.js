@@ -35,8 +35,8 @@ define(['jquery',
         vm.dateTime.output(this.params.output);
         
         if (this.params.startdate && this.params.enddate) {
-          vm.dateTime.startdate(this.params.startdate);
-          vm.dateTime.enddate(this.params.enddate);
+          vm.dateTime.startdate(new Date(this.params.startdate));
+          vm.dateTime.enddate(new Date(this.params.enddate));
         }
         
         vm.dateTime.callService();

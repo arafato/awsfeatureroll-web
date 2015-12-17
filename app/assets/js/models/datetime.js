@@ -27,8 +27,7 @@ define(['jquery',
     $('#enddate').datetimepicker();
 
     self.callService = function () {
-
-      var target = (self.output() === 'html') ? $('#dateTimeSearchHtml')[0] : $('dateTimeSearchRevealJs')[0];
+      var target = (self.output() === 'html') ? $('#dateTimeSearchHtml')[0] : $('#dateTimeSearchRevealJs')[0];
       var spinner = new Spinner();
 
       var url;
