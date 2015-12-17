@@ -144,7 +144,7 @@
           </div>
         </div>
       </form>
-      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'html'" id="dateTimeSearch">
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'html'" id="dateTimeSearchHtml">
         <div class="col-md-12">
           <table class="table table-hover">
             <thead>
@@ -154,7 +154,7 @@
                 <th>Category</th>
               </tr>
             </thead>
-            <tbody data-bind="foreach: dateTime.result">
+            <tbody data-bind="foreach: dateTime.htmlResult">
               <tr>
                 <td data-bind="text: published"></td>
                 <td>
@@ -166,16 +166,16 @@
           </table>
         </div>
       </div>
-      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'revealjs'" id="dateTimeSearch">
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'revealjs' && dateTime.revealLink() !== ''" id="dateTimeSearchRevealJs">
         <div class="col-md-12">
           <div class="jumbotron">
-            <!-- ko if: dateTime.result.cached -->
+            <!-- ko if: dateTime.revealCached -->
             <h3>Your RevealJs Slidedeck is ready to go!</h3>
             <!-- /ko -->
-            <!-- ko ifnot: dateTime.result.cached -->
+            <!-- ko ifnot: dateTime.revealCached -->
             <h3>Your RevealJs Slidedeck will be ready in a couple of seconds!</h3>
             <!-- /ko -->
-            <p><a class="btn btn-primary btn-lg" role="button" data-bind="attr: { href: dateTime.result.link }">Download</a></p>
+            <p><a class="btn btn-primary btn-lg" role="button" data-bind="attr: { href: dateTime.revealLink }">Download</a></p>
           </div>
         </div>
       </div>

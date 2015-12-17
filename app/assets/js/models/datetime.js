@@ -18,29 +18,35 @@ define(['jquery',
     self.startdate = ko.observable(new Date());
     self.enddate = ko.observable(new Date());
     self.output = ko.observable('html');
-    self.result = ko.observableArray([]);
+    self.htmlResult = ko.observableArray([]);
+    
+    self.revealCached = ko.observable(true);
+    self.revealLink = ko.observable('');
 
     $('#startdate').datetimepicker();
     $('#enddate').datetimepicker();
 
-    var target = $('#dateTimeSearch')[0];
-    var spinner = new Spinner();
-
     self.callService = function () {
+
+      var target = (self.output() === 'html') ? $('#dateTimeSearchHtml')[0] : $('dateTimeSearchRevealJs')[0];
+      var spinner = new Spinner();
+
       var url;
       switch (self.output()) {
         case 'html':
           url = Environment.FEATURES_SERVICE;
+          self.htmlResult([]);
           break;
         case 'revealjs':
           url = Environment.SLIDES_SERVICE;
+          self.revealLink('');
           break;
         default:
           url = Environment.FEATURES_SERVICE;
       }
-      
+
       url += '?startdate=' + moment(self.startdate()).format('YYYY-MM-DD') + '&enddate=' + moment(self.enddate()).format('YYYY-MM-DD');
-      
+
       $.ajax({
         url: url,
         type: 'GET',
@@ -48,7 +54,13 @@ define(['jquery',
           spinner.spin(target);
         },
         success: function (data) {
-          self.result(data);
+          if (data.link !== undefined) {
+            self.revealCached(data.cached);
+            self.revealLink(data.link);
+          }
+          else {
+            self.htmlResult(data);
+          }
         },
         error: function (data) {
           console.log(data);
