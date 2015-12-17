@@ -23,6 +23,6 @@ define(['jquery',
 
     self.nav = new Nav();
     self.keyword = new Keyword();
-    self.date = new DateVm();
+    self.dateTime = new DateVm();
   };
 });

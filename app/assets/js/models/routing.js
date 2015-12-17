@@ -29,6 +29,19 @@ define(['jquery',
         vm.nav.chosenServiceCategory('date');
       });
       
+      this.get('#home/date/:output', function () {
+        vm.nav.chosenMainCategory('home');
+        vm.nav.chosenServiceCategory('date');
+        vm.dateTime.output(this.params.output);
+        
+        if (this.params.startdate && this.params.enddate) {
+          vm.dateTime.startdate(this.params.startdate);
+          vm.dateTime.enddate(this.params.enddate);
+        }
+        
+        vm.dateTime.callService();
+      });
+      
       this.get('#home/slides', function () {
         vm.chosenMainCategory('home');
         vm.chosenServiceCategory('slides');

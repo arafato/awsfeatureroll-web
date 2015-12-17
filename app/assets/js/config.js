@@ -7,6 +7,7 @@ require.config({
     'sammy': '../../bower_components/sammy/lib/sammy',
     'spin': '../../bower_components/spin.js/spin',
     'knockout.validation': '../../bower_components/knockout.validation/Dist/knockout.validation',
+    'koBinding.datePicker': '../../assets/js/koBindings/datePickerBinding',
     'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker',
     'notify': '../../bower_components/notifyjs-dist/notify',
     'notify-bootstrap': '../../bower_components/notifyjs-dist/styles/bootstrap/notify-bootstrap',
@@ -27,6 +28,9 @@ require.config({
     },
     'datePicker': {
       deps: ['moment']
+    },
+    'koBinding.datePicker': {
+      deps: ['datePicker', 'knockout']
     }
   },
   map: {

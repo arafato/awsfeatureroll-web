@@ -54,9 +54,10 @@
           </ul>
         </div>
       </div>
-      <br>
+
       <!-- KEYWORD SEARCH -->
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'">
+        <br>
         <div class="col-lg-6">
           <div class="input-group">
             <form data-bind="submit: keyword.callService">
@@ -68,8 +69,9 @@
           </div>
         </div>
       </div>
-      <br>
+
       <div class="row" data-bind="visible: nav.chosenServiceCategory()==='keyword'" id="keywordSearch">
+        <br>
         <div class="col-md-12">
           <table class="table table-hover">
             <thead>
@@ -93,49 +95,113 @@
       </div>
 
       <!-- DATE SEARCH -->
-      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
-        <div class="col-md-12">
-          Date Search
-          <div class="container">
-            <div class="row">
-              <div class='col-sm-6'>
-                <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+      <form data-bind="submit: dateTime.callService">
+        <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
+          <br>
+          <div class="col-md-4">
+            <label for="startdate">Startdate</label>
+            <div class='input-group date' id="startdate">
+              <input type='text' class="form-control" data-bind="dateTimePicker: dateTime.startdate, dateTimePickerOptions: { format: 'YYYY-MM-DD' }"
+              />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
             </div>
+          </div>
+          <div class="col-md-4">
+            <label for="startdate">Enddate</label>
+            <div class='input-group date' id="enddate">
+              <input type='text' class="form-control" data-bind="dateTimePicker: dateTime.enddate, dateTimePickerOptions: { format: 'YYYY-MM-DD' }"
+              />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
+          <div class="col-md-2">
+            <strong><h5>Choose your output:</h5></strong>
+          </div>
+          <div class="col-md-1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="html" data-bind="checked: dateTime.output" checked> HTML
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="revealjs" data-bind="checked: dateTime.output"> RevealJS
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date'">
+          <div class="col-md-1">
+            <button type="submit" class="btn btn-default">GO!</button>
+          </div>
+        </div>
+      </form>
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'html'" id="dateTimeSearch">
+        <div class="col-md-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Published</th>
+                <th>Title</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody data-bind="foreach: dateTime.result">
+              <tr>
+                <td data-bind="text: published"></td>
+                <td>
+                  <a data-bind="attr: { href: url }, text: title" target="_blank"></a>
+                </td>
+                <td data-bind="text: category"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'revealjs'" id="dateTimeSearch">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <!-- ko if: dateTime.result.cached -->
+            <h3>Your RevealJs Slidedeck is ready to go!</h3>
+            <!-- /ko -->
+            <!-- ko ifnot: dateTime.result.cached -->
+            <h3>Your RevealJs Slidedeck will be ready in a couple of seconds!</h3>
+            <!-- /ko -->
+            <p><a class="btn btn-primary btn-lg" role="button" data-bind="attr: { href: dateTime.result.link }">Download</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- API VIEW -->
+      <div id="about" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='api'">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <p>Add api page here</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact View -->
+      <div id="contact" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='contact'">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <p>Add contact page here</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- API VIEW -->
-    <div id="about" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='api'">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <p>Add api page here</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact View -->
-    <div id="contact" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='contact'">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <p>Add contact page here</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    window.knockoutBootstrapDebug = true;
-  </script>
-  <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
+    <script>
+      window.knockoutBootstrapDebug = true;
+    </script>
+    <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
 </body>
 
 </html>
