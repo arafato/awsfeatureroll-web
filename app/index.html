@@ -166,7 +166,8 @@
           </table>
         </div>
       </div>
-      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'revealjs' && dateTime.revealLink() !== ''" id="dateTimeSearchRevealJs">
+      <div class="row" data-bind="visible: nav.chosenServiceCategory()==='date' && dateTime.output() === 'revealjs' && dateTime.revealLink() !== ''"
+      id="dateTimeSearchRevealJs">
         <div class="col-md-12">
           <div class="jumbotron">
             <!-- ko if: dateTime.revealCached -->
@@ -179,22 +180,22 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- API VIEW -->
-      <div id="about" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='api'">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <p>Add api page here</p>
-          </div>
+    <!-- API VIEW -->
+    <div id="about" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='api'">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <p>Add api page here</p>
         </div>
       </div>
+    </div>
 
-      <!-- Contact View -->
-      <div id="contact" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='contact'">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <p>Add contact page here</p>
-          </div>
+    <!-- Contact View -->
+    <div id="contact" style="display:none;" data-bind="visible: nav.chosenMainCategory()==='contact'">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <p>Add contact page here</p>
         </div>
       </div>
     </div>
@@ -203,5 +204,4 @@
     </script>
     <script data-main="assets/js/config" src="bower_components/requirejs/require.js"></script>
 </body>
-
 </html>
