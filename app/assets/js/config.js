@@ -37,7 +37,7 @@ require.config({
     '*': {
       'knockout': '../../bower_components/knockout.js/knockout',
       'ko': '../../bower_components/knockout.js/knockout',
-      'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker',
+      'datePicker': '../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
       'moment': '../../bower_components/moment/moment'
     }
   }
